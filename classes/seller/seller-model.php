@@ -1,7 +1,7 @@
 <?php
 
 require_once(__DIR__.'/../db.php');
-require 'seller.php';
+require_once 'seller.php';
 
 class SellerModel extends DB {
 
@@ -26,24 +26,19 @@ class SellerModel extends DB {
         $statement->execute([$firstname, $lastname, $email]);
     }
 
-    //jobba med denna
-    public function getSeller($id) {
-        $query = "SELECT * FROM $table";
-        $stmt = $this->pdo->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     public function getAllTheSellers() {
         $sql = 
-        "SELECT sellers.sellers_firstname, sellers.sellers_lastname FROM sellers
+        "SELECT sellers.id, sellers.sellers_firstname, sellers.sellers_lastname, sellers.sellers_email_adress FROM sellers
         ORDER BY sellers.sellers_firstname ASC";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
         $allSellers = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $SellerCollection = new SellerCollection();
         foreach($allSellers as $seller) {
-            $newSeller = new Seller($seller['sellers_firstname'], $seller['seller_lastname'], $seller['sellers_email']);
+            $newSeller = new Seller($seller['id'], $seller['sellers_firstname'], $seller['sellers_lastname'], $seller['sellers_email_adress']);
+            $SellerCollection->addSeller($newSeller);
         }
+        return $SellerCollection;
     }
 
 }

@@ -2,13 +2,13 @@
 
 class Seller {
 
-    //private int $id;
-    private string $firstname;
-    private string $lastname;
-    private string $email;
+    private int $id;
+    private $firstname;
+    private $lastname;
+    private $email;
 
-    public function __construct(string $firstname, string $lastname, string $email) {
-       // $this->id = $id;
+    public function __construct(int $id, string $firstname, string $lastname, string $email) {
+        $this->id = $id;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->email = $email;
@@ -24,5 +24,9 @@ class Seller {
 
     public function getLastname(): string {
         return $this->lastname;
+    }
+
+    public function getEmail(): string {
+        return $this->email;
     }
 }
