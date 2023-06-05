@@ -1,9 +1,10 @@
 html, body {
-    margin: 0; 
+    margin: 50px; 
     padding: 0; 
     display: flex;
+    flex-direction: column;
 }
 
 body {
-    background-color: green;
+    background-color: lightgreen;
 }

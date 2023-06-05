@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__.'/../db.php');
+require 'seller.php';
 
 class SellerModel extends DB {
 
@@ -32,4 +33,17 @@ class SellerModel extends DB {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getAllTheSellers() {
+        $sql = 
+        "SELECT sellers.sellers_firstname, sellers.sellers_lastname FROM sellers
+        ORDER BY sellers.sellers_firstname ASC";
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+        $allSellers = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach($allSellers as $seller) {
+            $newSeller = new Seller($seller['sellers_firstname'], $seller['seller_lastname'], $seller['sellers_email']);
+        }
+    }
+
 }
