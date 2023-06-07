@@ -1,0 +1,49 @@
+.content {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.main-content {
+    margin-top: 0px;
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns : 35% 30% 35%;
+    justify-content: space-around;
+}
+
+.all_sellers_list {
+    padding: 70px 30px;
+    background-color: rgba(34,162,111, 0.5);
+    border-radius: 25px;
+}
+
+.all_sellers_list ul {
+    margin: 0;
+
+}
+
+.all_sellers_list ul li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.seller_info {
+    height: fit-content;
+    margin: 0 auto;
+    padding: 70px 30px;
+    background-color: rgba(34,162,111, 0.5);
+    border-radius: 25px;
+}
+
+.seller_info p{
+}
+
+.selected-seller-icon {
+    font-size: 40px;
+    width: 100%;
+}

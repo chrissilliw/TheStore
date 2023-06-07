@@ -1,6 +1,6 @@
 <?php 
 
-//§require_once 'seller.php';
+require_once 'seller.php';
 
 class SellerView {
 
@@ -21,8 +21,15 @@ class SellerView {
     }
     
     public function renderSellerInfo(Seller $s): void {
-        echo "<h3>{$s->getFirstname} {$s->getLastname}</h3>";
-        
+        echo    "<i class='fa-regular selected-seller-icon fa-user'></i> 
+                <h3>{$s->getFirstname()} {$s->getLastname()}</h3>
+                <p>Antal inlämnade plagg: {}</p>
+                <p>Antal inlämnade plagg: </p>
+                <p>Antal sålda plagg: </p>
+                <p>Totala försäljningssumman: </p>
+                <p>Alla plagg som säljaren har lämnat in: </p>
+        ";
+
     }
 
 }

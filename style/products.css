@@ -1,0 +1,20 @@
+.product-item {
+    border-bottom: 1px solid orange; 
+}
+
+.product-item:first-child{
+    border-top: 1px solid orange;
+}
+
+.product-item {
+    list-style: none;
+}
+
+.product-item p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.product-item p span {
+    font-weight: 600;
+}

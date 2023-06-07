@@ -41,4 +41,27 @@ class SellerModel extends DB {
         return $SellerCollection;
     }
 
+    public function getSeller(int $m): Seller {
+        $sql = 
+        "SELECT sellers.id, sellers.sellers_firstname, sellers.sellers_lastname, sellers.sellers_email_adress FROM `sellers` 
+        WHERE sellers.id = {$m}";
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+        $seller =  $statement->fetchAll(PDO::FETCH_ASSOC);
+        $selectedSeller = new Seller($seller['id'], $seller['sellers_firstname'], $seller['sellers_lastname'], $seller['sellers_email_adress']);
+        return $selectedSeller;
+    }
+
+    // public function getSellersNumberOfGarmentsSubmitted(int $m): Seller {
+    //     $sql = 
+    //     "SELECT s.sellers_firstname, s.sellers_lastname, COUNT(s.id) FROM sellers AS s 
+    //     JOIN products AS p ON p.seller_id = s.id
+    //     GROUP BY s.id";
+    //     $statement = $this->pdo->prepare($sql);
+    //     $statement->execute();
+        
+
+    // }
+
+
 }

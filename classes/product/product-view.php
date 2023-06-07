@@ -5,27 +5,27 @@ class ProductView {
     public function renderAllProductsAsList(array $products): void {
         echo "<ul>";
         foreach($products as $product) {
-            echo "<li> 
+            echo "<li class='product-item'> 
                     <p>
-                        Produktnamn: {$product['prod_name']}
+                        <span>Produktnamn:</span> {$product['prod_name']}
                     </p>
                     <p>
-                        Beskrivning: {$product['prod_description']}
+                        <span>Beskrivning:</span> {$product['prod_description']}
                     </p>   
                     <p>
-                        Märke: {$product['product_brand_name']}
+                       <span>Märke:</span> {$product['product_brand_name']}
                     </p>
                     <p>
-                        Typ: {$product['product_type_name']}
+                        <span>Typ:</span> {$product['product_type_name']}
                     </p>
                     <p>
-                        Storlek: {$product['product_size_name']}
+                        <span>Storlek:</span> {$product['product_size_name']}
                     </p>
                     <p>
-                        Färg: {$product['product_color_name']}
+                        <span>Färg:</span> {$product['product_color_name']}
                     </p>
                     <p>
-                        Skick: {$product['product_quality_name']}
+                        <span>Skick:</span> {$product['product_quality_name']}
                     </p>
                 </li>";
         }
