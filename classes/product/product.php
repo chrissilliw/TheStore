@@ -12,7 +12,7 @@ class Product {
     private $color;
     private $price; 
 
-    public function __construct(int $id, string $name, string $description, int $type, int $brand, int $quality, int $size, int $color, int $price) {
+    public function __construct(int $id, string $name, string $description, string $type, string $brand, string $quality, string $size, string $color, int $price) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;

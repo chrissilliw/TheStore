@@ -10,6 +10,10 @@ class ProductCollection {
         array_push($this->collection, $p);
     }
 
+    public function addProducts(Product $p): void {
+        $this->collection = array_merge($this->collection, $p);
+    }
+
     public function getAllProducts(): array {
         return $this->collection;
     }

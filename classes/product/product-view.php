@@ -1,31 +1,33 @@
 <?php
 
+require_once 'product.php';
+
 class ProductView {
 
-    public function renderAllProductsAsList(array $products): void {
+    public function renderAllProductsAsList(ProductCollection $products): void {
         echo "<ul>";
         foreach($products as $product) {
             echo "<li class='product-item'> 
                     <p>
-                        <span>Produktnamn:</span> {$product['prod_name']}
+                        <span>Produktnamn:</span> {$product->getName()}
                     </p>
                     <p>
-                        <span>Beskrivning:</span> {$product['prod_description']}
+                        <span>Beskrivning:</span> {$product->getDescription()}
                     </p>   
                     <p>
-                       <span>Märke:</span> {$product['product_brand_name']}
+                       <span>Märke:</span> {$product->getBrand()}
                     </p>
                     <p>
-                        <span>Typ:</span> {$product['product_type_name']}
+                        <span>Typ:</span> {$product->getType()}
                     </p>
                     <p>
-                        <span>Storlek:</span> {$product['product_size_name']}
+                        <span>Storlek:</span> {$product->getSize()}
                     </p>
                     <p>
-                        <span>Färg:</span> {$product['product_color_name']}
+                        <span>Färg:</span> {$product->getColor()}
                     </p>
                     <p>
-                        <span>Skick:</span> {$product['product_quality_name']}
+                        <span>Skick:</span> {$product->getQuality()}
                     </p>
                 </li>";
         }
