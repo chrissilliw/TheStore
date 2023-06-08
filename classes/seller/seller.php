@@ -29,4 +29,8 @@ class Seller {
     public function getEmail(): string {
         return $this->email;
     }
+
+    public function getNumberOfGarments(): int {
+        
+    }
 }

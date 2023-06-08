@@ -42,9 +42,17 @@
                 $id = (int) filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
                 var_dump($id);
                 $single_seller = $SellerModel->getSeller($id);
+                $sellerNumberOfGarment = $SellerModel->getSellersNumberOfGarmentsSubmitted($id);
 
-                var_dump($single_seller);
+                var_dump($sellerNumberOfGarment);
+
+                $listofSellersGarment = $SellerModel->getSellersAllGarments($id);
+
+                //var_dump($listofSellersGarment);
+
                 $SellerView->renderSellerInfo($single_seller);
+
+                
             }
 
         ?>

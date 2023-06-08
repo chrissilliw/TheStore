@@ -5,6 +5,7 @@ html, body {
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #F0F3F4;
 }
 
 .page-container {
@@ -20,7 +21,9 @@ aside {
     width: 100%;
     max-width: 300px;
     min-width: 300px;
-    background: #F4F6F8;
+    background-color: #F0F3F4;
+    border-right: 1px solid rgba(81,89,102, .4);
+    /*border-right: #515966;*/
 }
 
 .sidebar-wrapper {
