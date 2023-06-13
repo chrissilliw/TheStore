@@ -1,5 +1,5 @@
 <?php
-    //require_once '../formhandlers/sellerformhandler.php';
+    // require_once '../form-handlers/seller-form-handler.php';
  ?>
 
     <form action="form-handlers/seller-form-handler.php" method="post" class="form-wrapper">

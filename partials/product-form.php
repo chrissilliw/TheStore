@@ -4,11 +4,18 @@
     require_once 'classes/type/type-model.php';
     require_once 'classes/brand/brand-model.php';
     require_once 'classes/size/size-model.php';
+    require_once 'classes/color/color-model.php';
+    require_once 'classes/quality/quality-model.php';
+    require_once 'classes/quality/quality-collection.php';
 
     $ProductModel = new ProductModel($pdo);
     $TypeModel = new TypeModel($pdo);
     $BrandModel = new BrandModel($pdo);
     $SizeModel = new SizeModel($pdo);
+    $ColorModel = new ColorModel($pdo);
+    $QualityModel = new QualityModel($pdo);
+    $allQualities = $QualityModel->getAllQualityInOrder();
+    $QualityCollection = new QualityCollection($pdo);
 ?>
 
 <form action="product-form-handler.php" method="post" class="form-wrapper">
@@ -70,15 +77,68 @@
         </div>
         <div class="input-wrapper">
             <label for="color" class="input-label">Färg<pre>*</pre></label>
-            <input type="text" name="prod_color" id="prod_color" placeholder="Färg">
+            <select name="color_id" class="select-search" id="color_id" data-live-search="true">
+                <option value="">Välj Färg</option>
+                <?php
+                    $colors = $ColorModel->getAllColorsInOrder();
+                    foreach($colors as $color) {
+                        echo "<option value='{$color['product_color_id']}'>
+                            {$color['product_color_name']}
+                            </option>";
+                    }
+                ?>
+            </select>
         </div>
         <div class="input-wrapper">
             <label for="quality" class="input-label">Kvalitet<pre>*</pre></label>
-            <input type="text" name="prod_quality" id="prod_quality" placeholder="Kvalitet">
+            <select name="quality_id" class="select-search" id="quality_id" data-live-search="true">
+                <option value="">Välj Kvalitet</option>
+                <?php
+                    $qualities = $QualityModel->getAllQualityInOrder();
+                    foreach($qualities as $quality) {
+                        echo "<option value='{$quality['product_quality_id']}'>
+                            {$quality['product_quality_name']}
+                        </option>";
+                    }
+                ?>
+            </select>
+        </div>
+        <div class="input-wrapper">
+    <?php $qualities = $QualityCollection->getAllQualities($allQualities); ?>
+            <label for="quality" class="input-label">
+                <?php 
+                    foreach($qualities as $key=> $quality) {
+                        echo $quality->getName();
+                    }
+                ?>
+                    <pre>*</pre></label>
+            <select name="quality_id" class="select-search" id="quality_id" data-live-search="true">
+                <option value="">
+                    
+                
+                </option>
+                <?php
+                    $qualities = $QualityModel->getAllQualityInOrder();
+                    foreach($qualities as $quality) {
+                        echo "<option value='{$quality}'>
+                            {$quality->getName()}
+                        </option>";
+                    }
+                ?>
+            </select>
         </div>
         <div class="input-wrapper">
             <label for="price" class="input-label">Pris<pre>*</pre></label>
             <input type="text" name="prod_pris" id="prod_pris" placeholder="Pris">
+        </div>
+
+        <div>
+        <?php
+            $qualities = $QualityCollection->getAllQualities();
+            foreach($qualities as $quality) {
+                echo $quality->getName();
+            }
+        ?>
         </div>
     </div>
 </div>

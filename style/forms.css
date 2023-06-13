@@ -48,11 +48,16 @@ input {
     border-radius: 8px;
 }
 
+.select-search {
+    width: 100% !important;
+}
+
 
 
 .submit-button {
     margin-top: 35px;
-    width: 100%;
+    width: 250px;
+    align-self: end;
     height: 40px;
     cursor: pointer;
     border: 1px solid transparent;

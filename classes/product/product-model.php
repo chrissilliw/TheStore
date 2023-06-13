@@ -50,7 +50,6 @@ class ProductModel extends DB {
                                             $product['product_color_name'], $product['product_quality_name'], $product['prod_price']);
                 $ProductCollection->addProduct($newProduct);
             }
-            //var_dump($ProductCollection);
             return $ProductCollection;
     }
 
