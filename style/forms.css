@@ -1,14 +1,24 @@
 .form-wrapper {
-    width: 35%;
     display: flex; 
     flex-direction: column;
-    padding: 70px 30px;
-    background-color: rgba(34,162,111, 0.5);
     border-radius: 25px;
 }
 
 .form-title{
     margin: 0px;
+}
+
+.inputs{
+    display: flex;  
+    gap: 15px;
+}
+
+.input-section {
+    width: 50%;
+}
+
+.inputs input {
+    padding: 10px 24px;
 }
 
 .input-wrapper {
@@ -17,23 +27,28 @@
     font-size: 18px;
 }
 
-.sellers-label {
+.input-label {
+    display: flex;
     margin-top: 20px;
     margin-bottom: 5px;
     font-size: 15px;
     font-weight: 500;
 }
 
-.sellers-label span{
-    color: #F44336;
+.input-label pre{
+    color: var(--color-danger);
+    margin: 0;
 }
 
 input {
     padding: 10px 14px;
     font-size: 16px;
+    background-color: var(--color-input-dark);
     border: 1px solid transparent;
     border-radius: 8px;
 }
+
+
 
 .submit-button {
     margin-top: 35px;
@@ -42,7 +57,7 @@ input {
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: 25px;
-    background-color: #23A26F;
+    background-color: var(--color-primary);
     color: #fff;
     font-size: 15px;
     font-weight: 600;

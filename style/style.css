@@ -1,90 +1,217 @@
+@import url("variables.css");
+
+* {
+    text-decoration-line: none;
+}
+
 html, body {
-    margin: 0px; 
-    padding: 0px; 
+    margin: 0; 
+    padding: 0;
+    font-size: 14px;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #F0F3F4;
+    width: 100vw;
+    height: 100vh;
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    background-color: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
 }
 
-.page-container {
-    width: 100vw;
-    height: auto;
-    display: flex;
+.container {
+    width: 95%;
+    margin: 0 auto;
+    display: grid; 
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto;
 }
+
+/*******************************#############    SIDEBAR  ###########**************************************/
 
 aside {
-    position: relative;
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
-    max-width: 300px;
-    min-width: 300px;
-    background-color: #F0F3F4;
-    border-right: 1px solid rgba(81,89,102, .4);
-    /*border-right: #515966;*/
+    height: 100vh;
 }
 
-.sidebar-wrapper {
-    position: fixed;
-}
-
-h1 {
-    margin-left: 20px;
-    padding-bottom: 10px;
-    width: 240px;
-    border-bottom: 1px solid #212426;
-}
-
-nav ul {
-    margin-left: 20px;
-    padding: 0
-}
-
-nav ul li{
-    width: 240px;
-    margin-bottom: 5px;
-    list-style: none;
-    line-height: 2.7rem;
-
-}
-
-nav ul li i {
-    justify-self: center;
-    color: #23A26F;
-}
-
-nav ul li a {
-    display: grid;
-    grid-template-columns: 20% 70%;
-    justify-content: center;
+aside .top {
+    display: flex;
     align-items: center;
-    text-decoration: none;
-    color: #23A26F;
-    background-color: #F4F6F8;
-    border-radius: 5px;
-    transition: 300ms ease;
+    justify-content: space-between;
 }
 
-nav ul li a:hover {
-    background-color: #23A26F;
-    color: #fff;
-} 
-
-nav ul li a:hover > i {
-    color: #fff;
+aside .close {
+    display: none;
 }
 
-.active {
-    background-color: #23A26F;
-    color: #F4F6F8;
+aside .sidebar {
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
 }
 
-.active-text {
-    color: #F4F6F8;
+aside .h3 {
+    font-weight: 500;
 }
 
-.active-icon {
-    color: #F4F6F8;
+aside .sidebar a {
+    display: flex;
+    color: var(--color-info-dark);
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
 }
+
+aside .sidebar a.active {
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+}
+
+aside .sidebar a.active:before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar a {
+    transition: all 300ms ease;
+}
+
+aside .sidebar a .icon-span{
+    transition: all 300ms ease;
+}
+
+aside .sidebar a:hover{
+    margin-left: 1rem;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar a:hover > .icon-span{
+    color: var(--color-white);
+}
+
+aside .sidebar a:hover > h3{
+    color: var(--color-white);
+}
+
+aside .sidebar a.active:hover{
+    margin-left: 0rem;
+}
+
+/**************************************************************************************/
+
+
+/***********************##########    MAIN   ##########**************************/
+
+main {
+    margin-top : 1.4rem;
+}
+
+/**********           Two-column            *************/
+
+.section-half {
+    display: grid;
+    grid-template-columns: 22rem auto;
+    gap: 1.6rem;
+}
+
+.section-half.flip{
+    grid-template-columns: 40rem auto;
+}
+
+.section-half > div {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transform: scale(1);
+    transition: all 300ms ease;
+}
+
+.section-half > div:hover {
+    /*box-shadow: var(--box-shadow-hover);*/
+    transform: scale(0.99);
+    box-shadow: none;
+}
+
+.section-half > div .icon-span {
+    padding: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-size: 2rem;
+}
+/**************************************************************/
+
+/**********           Three-column            *************/
+.section-third {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+.section-third > .white-card {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transform: scale(1);
+    transition: all 300ms ease;
+}
+
+.section-third > .white-card:hover {
+    /*box-shadow: var(--box-shadow-hover);*/
+    transform: scale(0.99);
+    box-shadow: none;
+}
+
+.section-third > .white-card .icon-span {
+    padding: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.section-third > .no-card {
+    background-color: transparent;
+}
+/**************************************************************/
+
+main .section-full {
+    margin-top: 3rem;
+}
+
+main .section-full table {
+    padding: var(--card-padding);
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+main table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px dotted var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td{
+    border: none;   
+}
+
+.more-info-btn {
+    background-color: var(--color-primary-variant);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+/**************************************************************************************/

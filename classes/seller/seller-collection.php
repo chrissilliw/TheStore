@@ -18,4 +18,8 @@ class SellerCollection {
         return $this->collection;
     }
 
+    public function getSeller(int $s): Seller {
+        return $this->collection[$m-1];
+    }
+
 }

@@ -2,6 +2,7 @@
 
 require_once(__DIR__.'/../db.php');
 require_once 'seller.php';
+require_once 'seller-collection.php';
 
 class SellerModel extends DB {
 
@@ -58,36 +59,42 @@ class SellerModel extends DB {
 
     public function getSellersNumberOfGarmentsSubmitted(int $m) {
         $sql = 
-        "SELECT COUNT(s.id) FROM sellers AS s 
+        "SELECT s.sellers_firstname, COUNT(s.id) FROM sellers AS s 
         JOIN products AS p ON p.seller_id = s.id
-        WHERE s.id = {$m}
-        GROUP BY s.id";
+        WHERE s.id = {$m}";
+        //GROUP BY s.id";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
         $fetchedData = $statement->fetchAll(PDO::FETCH_ASSOC);
         $numberOfGarments = $fetchedData[0]['COUNT(s.id)'];
+        //$numberOfGarments = $fetchedData[0];
         $value =  (int) $numberOfGarments;
         return $value;
     }
 
-    public function getSellersAllGarments(int $m) {
+    public function getSellersNumbersOfSoldGarments(int $m) {
         $sql = 
-        "SELECT products.prod_name, products.prod_description, 
-        product_types.product_type_name, 
-        product_brands.product_brand_name,
-        product_sizes.product_size_name,
-        product_colors.product_color_name,
-        product_quality.product_quality_name FROM products
-        JOIN product_types on products.type_id = product_types.product_type_id
-        JOIN product_brands on products.brand_id = product_brands.product_brand_id
-        JOIN product_sizes on products.size_id = product_sizes.product_size_id
-        JOIN product_colors on products.color_id = product_colors.product_color_id
-        JOIN product_quality on products.quality_id = product_quality.product_quality_id
-        WHERE products.seller_id = {$m}";
+        "SELECT COUNT(s.id) FROM sellers AS s 
+        JOIN products AS p ON p.seller_id = s.id
+        WHERE s.id = {$m} AND p.is_sold > 0";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        $fetchedData = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $totalSoldGarments = $fetchedData[0]['COUNT(s.id)'];
+        $value = (int) $totalSoldGarments;
+        return $value;
     }
 
-
+    public function getSellersTotalSaleOfSoldGarments(int $m) {
+        $sql = 
+        "SELECT SUM(p.prod_price) FROM products AS p
+        JOIN sellers AS s ON s.id = p.seller_id
+        WHERE s.id = {$m} AND p.is_sold > 0";
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+        $fetchedData = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $totalSaleAmount = $fetchedData[0]['SUM(p.prod_price)'];
+        $value = (int) $totalSaleAmount;
+        return $value;
+    }
 }

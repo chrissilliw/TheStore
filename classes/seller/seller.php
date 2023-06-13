@@ -1,11 +1,12 @@
 <?php
 
-class Seller {
+class Seller{
 
     private int $id;
     private $firstname;
     private $lastname;
     private $email;
+    private $image;
 
     public function __construct(int $id, string $firstname, string $lastname, string $email) {
         $this->id = $id;
@@ -30,7 +31,7 @@ class Seller {
         return $this->email;
     }
 
-    public function getNumberOfGarments(): int {
-        
+    public function getImage(): string {
+        return $this->image;
     }
 }
