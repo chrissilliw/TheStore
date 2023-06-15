@@ -1,8 +1,8 @@
 <?php 
 
 require_once(__DIR__.'/../db.php');
-require_once('quality.php');
-require_once('quality-collection.php');
+require_once 'quality.php';
+require_once 'quality-collection.php';
 
 class QualityModel extends DB {
 
@@ -15,7 +15,7 @@ class QualityModel extends DB {
     public function getAllQualityInOrder() {
         $sql = 
         "SELECT product_quality.product_quality_id, product_quality.product_quality_name FROM product_quality
-        ORDER BY product_quality.product_quality_name DESC";
+        ORDER BY product_quality_name DESC";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
         $allQualities = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,6 @@ class QualityModel extends DB {
             $newQuality = new Quality($quality['product_quality_id'], $quality['product_quality_name']);
             $QualityCollection->addQuality($newQuality);
         }
-        print_r($QualityCollection);
         return $QualityCollection;
     }
 }

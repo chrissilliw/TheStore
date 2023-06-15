@@ -21,6 +21,7 @@ body {
 }
 
 .container {
+    max-width: 1300px;
     width: 95%;
     margin: 0 auto;
     display: grid; 
@@ -35,6 +36,7 @@ aside {
 }
 
 aside .top {
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,9 +48,10 @@ aside .close {
 
 aside .sidebar {
     background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
     display: flex;
     flex-direction: column;
-    height: 85vh;
+    height: 60vh;
 }
 
 aside .h3 {
@@ -79,7 +82,17 @@ aside .sidebar a.active:before {
 }
 
 aside .sidebar a {
+    margin-left: 0;
+    text-decoration: none;
     transition: all 300ms ease;
+}
+
+aside .sidebar a .menu-icon {
+    transition: all 300ms ease;
+}
+
+aside .sidebar a h3 {
+    margin-bottom: 0;
 }
 
 aside .sidebar a .icon-span{
@@ -87,19 +100,20 @@ aside .sidebar a .icon-span{
 }
 
 aside .sidebar a:hover{
-    margin-left: 1rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-light);
+    color: var(--color-primary);
+}
+
+aside .sidebar a:hover > .menu-icon{
+    margin-left: 2rem;
 }
 
 aside .sidebar a:hover > .icon-span{
+    margin-left: 0;
     color: var(--color-white);
 }
 
-aside .sidebar a:hover > h3{
-    color: var(--color-white);
-}
-
-aside .sidebar a.active:hover{
+aside .sidebar a.active:hover > .menu-icon{
     margin-left: 0rem;
 }
 
@@ -111,6 +125,25 @@ aside .sidebar a.active:hover{
 main {
     margin-top : 1.4rem;
 }
+
+/**********########   One-column   ########*************/
+
+.section-top {
+    margin-top: 25px; 
+    margin-bottom: 20px;
+    background-color: var(--color-white);
+    padding: var(--top-card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transform: scale(1);
+    transition: all 300ms ease;
+}
+
+.section-top h1{
+    margin-bottom: 0;
+}
+
+/********************************************************/
 
 /**********           Two-column            *************/
 
@@ -133,23 +166,29 @@ main {
     transition: all 300ms ease;
 }
 
-.section-half > div:hover {
-    /*box-shadow: var(--box-shadow-hover);*/
-    transform: scale(0.99);
-    box-shadow: none;
+.section-title-container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
-.section-half > div .icon-span {
+.icon-span {
+    margin: 5px;
     padding: 0.5rem;
     background-color: var(--color-primary);
     color: var(--color-white);
     border-radius: 50%;
     font-size: 2rem;
 }
+
+.section-title {
+    margin: 0;
+}
 /**************************************************************/
 
 /**********           Three-column            *************/
 .section-third {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
@@ -185,16 +224,17 @@ main {
 
 main .section-full {
     margin-top: 3rem;
-}
-
-main .section-full table {
     padding: var(--card-padding);
-    width: 100%;
     background-color: var(--color-white);
     border-radius: var(--card-border-radius);
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
-    text-align: center;
+}
+
+main .section-full table {
+    width: 100%;
+    text-align: left;
+    border-collapse: inherit;
 }
 
 main table tbody td {
@@ -208,10 +248,20 @@ main table tbody tr:last-child td{
 }
 
 .more-info-btn {
-    background-color: var(--color-primary-variant);
-    color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-primary);
     padding: 2px 10px;
     font-size: 11px;
     border-radius: var(--border-radius-1);
+    border: 1px solid var(--color-primary);
+    transform: scale(1);
+    transition: 300ms ease;
+}
+
+.more-info-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: scale(2.2);
+    text-decoration: none;
 }
 /**************************************************************************************/

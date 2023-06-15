@@ -42,7 +42,7 @@
 
 input {
     padding: 10px 14px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: var(--color-input-dark);
     border: 1px solid transparent;
     border-radius: 8px;
@@ -52,7 +52,10 @@ input {
     width: 100% !important;
 }
 
-
+textarea {
+    padding: 10px;
+    font-size: 14px;
+}
 
 .submit-button {
     margin-top: 35px;

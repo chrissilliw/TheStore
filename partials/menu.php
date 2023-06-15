@@ -11,17 +11,17 @@
             </div>
             <div class="sidebar">
                 <a href="index.php" class="<?php echo $page == "index.php"? 'active' : '' ?>">
-                    <span class="material-symbols-sharp">home</span>
+                    <span class="material-symbols-sharp menu-icon">home</span>
                     <h3>Hem</h3>
                 </a>
                 <a href="sellers.php" class="<?php echo $page == "sellers.php"? 'active' : '' ?>">
-                    <span class="material-symbols-sharp">
+                    <span class="material-symbols-sharp menu-icon">
                         person
                     </span>
                     <h3>Säljare</h3>
                 </a>
-                <a href="products.php" <?php echo $page == "products.php"? 'active' : '' ?>>
-                <span class="material-symbols-sharp">
+                <a href="products.php" class="<?php echo $page == "products.php"? 'active' : '' ?>">
+                <span class="material-symbols-sharp menu-icon">
                     styler
                 </span>
                     <h3>Plagg</h3>

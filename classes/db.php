@@ -8,14 +8,6 @@ class DB {
         $this->pdo = $pdo;
     }
 
-    // ----
-    // public function getAll($table) {
-    //     $query = "SELECT * FROM $table";
-    //     $statement = $this->pdo->prepare($query);
-    //     $statement->execute();
-    //     return $statement->fetchAll(PDO::FETCH_ASSOC);
-    // }
-
     public function getAll($table) {
         $query = "SELECT * FROM $table";
         $stmt = $this->pdo->prepare($query);

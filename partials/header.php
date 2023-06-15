@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style/variables.css" />
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/seller.css" />
     <link rel="stylesheet" href="style/forms.css" />
+    <link rel="stylesheet" href="style/footer.css" />
     <title>The Store</title>
 </head>
 <body>

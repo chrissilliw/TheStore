@@ -1,6 +1,8 @@
 /* Root Variable */
 :root {
-    --color-primary: #7380ec;
+    /* --color-primary: #7380ec; */
+    --color-primary: #17AF7B;
+    --color-secondary: #FF665C;
     --color-danger: #ff7782;
     --color-success: #41f1b6;
     --color-warning: #ffbb55;
@@ -9,16 +11,19 @@
     --color-info-light: #dce1eb;
     --color-input-dark: rgba(232, 232, 232, .7);
     --color-dark: #363949;
-    --color-light: rgba(132, 139, 200, 0.18);
+    --color-light: #F7F7F7;
     --color-primary-variant: #111e88;
+    --color-tertiary-1: #7ADBFA;
+    --color-tertiary-2: #FFB2E0;
     --color-dark-variant: #677483;
     --color-background: #f6f6f9;
 
-    --card-border-radius: 2rem;
+    --card-border-radius: 1rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 0.8rem;
     --border-radius-3: 1.2rem;
 
+    --top-card-padding: 1rem 1.8rem;
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
 

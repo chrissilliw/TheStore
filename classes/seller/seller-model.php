@@ -62,7 +62,6 @@ class SellerModel extends DB {
         "SELECT s.sellers_firstname, COUNT(s.id) FROM sellers AS s 
         JOIN products AS p ON p.seller_id = s.id
         WHERE s.id = {$m}";
-        //GROUP BY s.id";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
         $fetchedData = $statement->fetchAll(PDO::FETCH_ASSOC);

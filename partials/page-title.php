@@ -1,1 +1,0 @@
-<h2><?php echo $page == "index.php"? 'active' : '' ?> </h2>

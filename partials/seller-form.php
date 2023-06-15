@@ -1,8 +1,5 @@
-<?php
-    // require_once '../form-handlers/seller-form-handler.php';
- ?>
 
-    <form action="form-handlers/seller-form-handler.php" method="post" class="form-wrapper">
+    <form action="form-handlers/seller-form-handler.php" method="POST" class="form-wrapper">
         <h3>Registera en ny användare</h3>
         <div class="input-wrapper">
             <label for="firstname" class="input-label">Förnamn<pre>*</pre> </label>

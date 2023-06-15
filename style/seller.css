@@ -1,0 +1,71 @@
+.section-half > div .user-card {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-card .user-card-name {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 2.1rem;
+}
+
+.user-card .user-card-email {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.info-box-section{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.info-box{
+    width: 120px;
+    height: 120px;
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+
+}
+
+.box-left {
+    background-color: var(--color-tertiary-1);
+}
+
+.box-right {
+    background-color: var(--color-secondary);
+}
+
+.info-box-number-group {
+    display: flex;
+}
+
+.info-box-number {
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.user-card .user-card-sales {
+    font-size: 1.3rem;
+}
+
+.user-card ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.user-card ul li:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px; 
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    margin: 5px;
+}

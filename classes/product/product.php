@@ -10,9 +10,11 @@ class Product {
     private $quality;
     private $size;
     private $color;
+    private $seller;
     private $price; 
+    private $is_sold;
 
-    public function __construct(int $id, string $name, string $description, string $type, string $brand, string $quality, string $size, string $color, int $price) {
+    public function __construct(int $id, string $name, string $description, string $type, string $brand, string $quality, string $size, string $color, string $seller, int $price, int $is_sold) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
@@ -21,7 +23,9 @@ class Product {
         $this->quality = $quality;
         $this->size = $size;
         $this->color = $color;
+        $this->seller = $seller;
         $this->price = $price;
+        $this->is_sold = $is_sold;
     }
 
     public function getId(): int {
@@ -56,8 +60,16 @@ class Product {
         return $this->color;
     }
 
+    public function getSeller(): string {
+        return $this->seller;
+    }
+
     public function getPrice(): string {
         return $this->price;
+    }
+
+    public function getIsSold(): int {
+        return $this->is_sold;
     }
 
 }

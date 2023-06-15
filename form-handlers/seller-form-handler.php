@@ -5,7 +5,8 @@ require '../classes/seller/seller-model.php';
 $pdo = require '../partials/connect.php';
 $sellerModel = new SellerModel($pdo);
 
-    if(isset($_POST['firstname'], $_POST['lastname'], $_POST['email'])) {
+
+    if(!empty(($_POST['firstname']) &&  ($_POST['lastname']) && ($_POST['email']))) {
         $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_SPECIAL_CHARS);
         $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -14,8 +15,6 @@ $sellerModel = new SellerModel($pdo);
     
     }
 
-
-
-header("Location: ../sellers.php");
+        header("Location: ../sellers.php");
 
 ?>
