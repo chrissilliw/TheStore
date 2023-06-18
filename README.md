@@ -1,7 +1,7 @@
 # TheStore
+<p>A web application page for an online thrift shop store for users(sellers) to upload and post clothes. </p>
 
 <h2>Project Description</h2>
-<p>A web application page for an online thrift shop store for users(sellers) to upload and post clothes. </p>
 
 <h2>Language and Tools</h2>
 <img align="left" alt="Html" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
