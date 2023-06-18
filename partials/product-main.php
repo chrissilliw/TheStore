@@ -13,8 +13,6 @@ $ProductView = new ProductView();
 $products = $ProductModel->getAllTheProducts();
 
 ?>
-
-
 <main>
     <section class="section-top">
         <div class="white-card">
