@@ -34,18 +34,18 @@
 <div class="inputs">
     <div class="input-section">
         <div class="input-wrapper">
-            <label for="name" class="input-label">Namn<pre> *</pre></label>
-            <input type="text" name="prod_name" id="prod_name" placeholder="Produktnamn">
+            <label for="prod_name" class="input-label">Namn<pre> *</pre></label>
+            <input class="input" type="text" name="prod_name" id="prod_name" placeholder="Produktnamn">
             <?php if(isset($name_error)) { ?>
                 <p><?php echo $name_error; ?></p>
             <?php } ?>
         </div>
         <div class="input-wrapper">
-            <label for="desc" class="input-label">Beskrivning<pre> *</pre></label>
+            <label for="prod_desc" class="input-label">Beskrivning<pre> *</pre></label>
             <textarea type="text" name="prod_desc" id="prod_desc" placeholder="Beskrivning"></textarea>
         </div>
         <div class="input-wrapper">
-            <label for="brand" class="input-label">Märke<pre> *</pre></label>
+            <label for="brand_id" class="input-label">Märke<pre> *</pre></label>
             <select name="brand_id" class="select-search" id="select_brand_id" data-live-search="true">
                 <option value="">Välj Märke</option>
                 <?php
@@ -58,7 +58,7 @@
             </select>
         </div>
         <div class="input-wrapper">
-            <label for="type" class="input-label">Typ<pre> *</pre></label>
+            <label for="type_id" class="input-label">Typ<pre> *</pre></label>
             <select name="type_id" class="select-search" id="type_id" data-live-search="true">
                 <option value="">Välj Typ</option>
                 <?php
@@ -73,7 +73,7 @@
     </div>
     <div class="input-section">
         <div class="input-wrapper">
-            <label for="size" class="input-label">Storlek<pre> *</pre></label>
+            <label for="size_id" class="input-label">Storlek<pre> *</pre></label>
             <select name="size_id" class="select-search" id="size_id" data-live-search="true">
                 <option value="">Välj Storlek</option>
                 <?php
@@ -86,7 +86,7 @@
             </select>
         </div>
         <div class="input-wrapper">
-            <label for="color" class="input-label">Färg<pre> *</pre></label>
+            <label for="color_id" class="input-label">Färg<pre> *</pre></label>
             <select name="color_id" class="select-search" id="color_id" data-live-search="true">
                 <option value="">Välj Färg</option>
                 <?php
@@ -99,7 +99,7 @@
             </select>
         </div>
         <div class="input-wrapper">
-            <label for="quality" class="input-label">Kvalitet<pre> *</pre></label>
+            <label for="quality_id" class="input-label">Kvalitet<pre> *</pre></label>
             <select name="quality_id" class="select-search" id="quality_id" data-live-search="true">
                 <option value="">Välj Kvalitet</option>
                 <?php
@@ -113,12 +113,12 @@
         </div>
 
         <div class="input-wrapper">
-            <label for="price" class="input-label">Pris<pre> *</pre></label>
-            <input type="text" name="prod_price" id="prod_price" placeholder="Pris">
+            <label for="prod_price" class="input-label">Pris<pre> *</pre></label>
+            <input class="input" type="text" name="prod_price" id="prod_price" placeholder="Pris">
         </div>
 
         <div class="input-wrapper">
-            <label for="seller" class="input-label">Säljare<pre> *</pre></label>
+            <label for="seller_id" class="input-label">Säljare<pre> *</pre></label>
             <select name="seller_id" class="select-search" id="seller_id" data-live-search="true">
                 <option value="">Välj Säljare</option>
                 <?php

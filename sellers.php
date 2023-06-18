@@ -8,8 +8,4 @@
     include 'partials/menu.php';
     include 'partials/seller-main.php';
 
-?>
-
-
-<?php
 include 'partials/footer.php';

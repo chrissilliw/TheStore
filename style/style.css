@@ -247,6 +247,10 @@ main table tbody tr:last-child td{
     border: none;   
 }
 
+tr {
+    width: 100%;
+}
+
 .more-info-btn {
     background-color: var(--color-white);
     color: var(--color-primary);
@@ -263,5 +267,33 @@ main table tbody tr:last-child td{
     color: var(--color-white);
     transform: scale(2.2);
     text-decoration: none;
+}
+
+.sell-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+    border: 1px solid var(--color-primary);
+    cursor: pointer;
+    transform: scale(1);
+    transition: 300ms ease;
+}
+
+.sell-btn:hover {
+    transform: scale(1.2);
+}
+
+.is_sold-btn {
+    background-color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+    text-decoration-line: line-through;
+    opacity: 0.7;
+    cursor: auto;
+}
+
+.is_sold-btn:hover {
+    transform: scale(1);
 }
 /**************************************************************************************/

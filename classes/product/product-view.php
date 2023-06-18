@@ -4,6 +4,10 @@ require_once 'product.php';
 
 class ProductView {
 
+    public function renderSellButton(): void {
+
+    }
+
     public function renderProductForTable(ProductCollection $pc): void {
         echo "
         <table>
@@ -13,25 +17,34 @@ class ProductView {
                 <th style='width:300px'>Beskrivning</th>
                 <th>Typ</th>
                 <th>Storlek</th>
-                <th>Färg</th>
+                <th>Säljare</th>
                 <th>Pris</th>
-                <th>Sålt</th>
+              
             </tr>
         </thead>
         <tbody>";
         foreach($pc->getAllProducts() as $product) {
             $checkedIfSold = $product->getIsSold();
-            // var_dump($checkedIfSold);
+    
+            if(isset($_POST['sell-btn'])) {
+                echo "funka";
+            }
+
             echo "
             <tr>
                 <td>{$product->getBrand()}</td>
                 <td>{$product->getDescription()}</td>
                 <td>{$product->getType()}</td>
                 <td>{$product->getSize()}</td>
-                <td>{$product->getColor()}</td>
-                <td>{$product->getPrice()}</td>
-                <td>
-                    <input name='checkedIfSold' type='checkbox'";  if ($checkedIfSold == 1) echo " checked='checked'>
+                <td>{$product->getSeller()}</td>
+                <td>{$product->getPrice()} kr</td>
+
+                <td> "; 
+                   echo  
+                   "<form action='form-handlers/buy_product-form-handler.php' method='POST'>";
+                   echo $checkedIfSold == 1 ? '<input value="såld" type="submit" class="sell-btn is_sold-btn">' : '<input type="submit" name="sell-btn" value="sälja" class="sell-btn">';
+                   "</form>";
+                echo "
                 </td>
 
             </tr>
@@ -42,6 +55,15 @@ class ProductView {
             </table>
             ";
     }
-
 }
-//        <input name='checkedIfSold' type='checkbox'"; if ($checkedIfSold == 1) echo " checked='checked'/>
+
+
+// <td>";
+// echo $checkedIfSold == 1 ? 'Yes' : 'No';
+
+// echo " 
+// </td>
+
+// <th>Sålt</th>
+//<?php echo $page == "products.php"? 'active' : '' 
+// <input name='checkedIfSold' type='checkbox'";  if ($checkedIfSold == 1) echo " checked='checked'>

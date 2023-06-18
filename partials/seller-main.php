@@ -18,11 +18,11 @@ $sellers = $SellerModel->getAllTheSellers();
 ?>
 
 <main>
-        <section class="section-top">
-            <div class="white-card">
-                <h1>Säljare</h1>
-            </div>
-        </section>
+    <section class="section-top">
+        <div class="white-card">
+            <h1>Säljare</h1>
+        </div>
+    </section>
 
              <section class="section-half">
                 <div class="sales white-card">
