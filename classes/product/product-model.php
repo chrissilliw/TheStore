@@ -29,9 +29,9 @@ class ProductModel extends DB {
         $sql = 
         "UPDATE products
         SET is_sold = 1
-        WHERE prod_id = :prod_id";
+        WHERE prod_id = ?";
         $statement = $this->pdo->prepare($sql);
-        $statement->execute(['prod_id' => $prod_id]);
+        $statement->execute([$prod_id]);
     }
 
     public function getAllTheProducts() {
