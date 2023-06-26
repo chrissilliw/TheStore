@@ -25,6 +25,7 @@ class ProductView {
         <tbody>";
         foreach($pc->getAllProducts() as $product) {
             $checkedIfSold = $product->getIsSold();
+            $productId = $product->getId();
 
             echo "
             <tr>
@@ -38,11 +39,10 @@ class ProductView {
                 <td> "; 
                    echo  
                    "<form action='form-handlers/buy_product-form-handler.php' method='POST'>";
-                   //echo $checkedIfSold == 1 ? '<input value="såld" type="submit" class="sell-btn is_sold-btn">' : '<input type="submit" name="sell-btn" value="sälja" class="sell-btn">';
-                   echo "<input type='hidden' name='prod_id' value='{$product->getId()}' />";
+                   echo "<input type='hidden' name='prod_id_{$product->getId()}' value='{$product->getId()}' />";
+                   //echo $productId;
                    echo $checkedIfSold == 1 ? "<button class='sell-btn is_sold-btn' type='submit'>Såld</>" : "<button class='sell-btn'>Sälja</button>";
-                   "</form>";
-                echo "
+                   echo "</form>
                 </td>
 
             </tr>
