@@ -47,5 +47,5 @@
 <h2>Getting started</h2>
 <h3>Prerequisites</h3>
 <ul>
-          <li>Make sure you have Node.js and npm installed on your system.</li>
+          <li>Make sure you have installed MySql installed locally</li>
 </ul>
