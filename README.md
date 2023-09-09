@@ -1,5 +1,5 @@
 # TheStore
-<p>A web application page for an online thrift shop store for users(sellers) to upload and post clothes.</p>
+<p>A simple web application page for an online thrift shop store for users(sellers) to upload and post clothes.</p>
 <ul>
           <li>Built on PHP</li>    
           <li>Database of use, MySql</li>
