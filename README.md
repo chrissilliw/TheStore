@@ -15,10 +15,12 @@
 <img align="left" alt="Html" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" />
 <img align="left" alt="Html" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" />
 
+<br>
+<br>
 <h2>Page Description</h2>
 
 <h2>Pages</h2>
-<h3>Hem Page</h3>
+<h3>Home Page</h3>
 <p>Home page, also dashboard </p>
 <ul>
   <li></li>          
