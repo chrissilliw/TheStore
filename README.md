@@ -43,3 +43,7 @@
 <img width="968" alt="image" src="https://github.com/chrissilliw/TheStore/assets/119321247/5495421b-30ed-41b3-8a67-5bb2b8abde3c">
 
 <h2>Getting started</h2>
+<h3>Prerequisites</h3>
+<ul>
+          <li>Make sure you have Node.js and npm installed on your system.</li>
+</ul>
