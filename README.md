@@ -55,5 +55,8 @@
           <li>Clone the repository</li>
 </ol>
 <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
-<pre><span class="pl-k">*</span> git clone https://github.com/chrissilliw/TheStore.git</pre>
+          <pre><span class="pl-k">*</span> git clone https://github.com/chrissilliw/TheStore.git</pre>
+          In phpmyadmin, create a new database and import "thriftshop.sql" to populate tables. 
+
+          Move cloned project folder to local server
 </div>
