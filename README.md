@@ -57,7 +57,7 @@
 <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
           <pre>
                     <span class="pl-k">*</span> git clone https://github.com/chrissilliw/TheStore.git
-                    In phpmyadmin, create a new database and import "thriftshop.sql" to populate tables. 
+                    <p>In phpmyadmin, create a new database and import "thriftshop.sql" to populate tables.</p>
 
                     <span class="pl-k">*</span> Move cloned project folder to local server
           </pre>
