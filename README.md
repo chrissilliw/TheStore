@@ -49,3 +49,8 @@
 <ul>
           <li>Make sure you have installed MySql installed locally</li>
 </ul>
+
+<h3>Installation</h3>
+<ol>
+          <li>Clone the repository</li>
+</ol>
